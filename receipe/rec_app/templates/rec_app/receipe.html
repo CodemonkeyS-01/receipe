@@ -1,0 +1,17 @@
+{% extends "rec_app/layout.html" %}
+
+{% block body %}
+    <h1>{{ receipe.name }}</h1>
+    <img href="/pictures/taifuku.jpg" name="taifuku"> 
+    <div>
+        <ul>
+            <h3>Ingredients</h3>
+            <li>{{receipe.ingredients}}</li>
+        </ul>
+        
+        <ol><h3>Procedure</h3>
+            <li>{{ receipe.procedure }}</li>  
+        </ol>
+        <a href="{% url 'index' %}"> Menu</a>
+    </div>
+{% endblock %}
