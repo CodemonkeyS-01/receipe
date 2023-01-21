@@ -2,7 +2,10 @@
 
 {% block body %}
     <h1>{{ receipe.name }}</h1>
-    <img href="/pictures/taifuku.jpg" name="taifuku"> 
+    {% if receipe.photo %}
+    <img src="{{ receipe.photo.url }}" width=400px>
+    {% endif %}
+    <img {{ receipe.photo }} name="taifuku"> 
     <div>
         <ul>
             <h3>Ingredients</h3>
