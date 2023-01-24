@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from . models import Receipes
+from . models import Receipes, Container
 
 
 # Create your views here.
@@ -11,6 +11,9 @@ def index(request):
 
 def receipe(request, receipe_id):
     receipe = Receipes.objects.get(id=receipe_id)
+    containers = receipe.container.all()
+    
     return render(request, "rec_app/receipe.html",{
-        "receipe": receipe
+        "receipe": receipe,
+        "containers": containers,
     })

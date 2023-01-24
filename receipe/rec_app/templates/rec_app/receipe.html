@@ -1,20 +1,32 @@
 {% extends "rec_app/layout.html" %}
-
 {% block body %}
     <h1>{{ receipe.name }}</h1>
     {% if receipe.photo %}
     <img src="{{ receipe.photo.url }}" width=400px>
     {% endif %}
-    <img {{ receipe.photo }} name="taifuku"> 
     <div>
-        <ul>
-            <h3>Ingredients</h3>
-            <li>{{receipe.ingredients}}</li>
-        </ul>
         
-        <ol><h3>Procedure</h3>
-            <li>{{ receipe.procedure }}</li>  
+        {% for container in containers %}
+        <h2> Container:{{ container.id }}</h2> 
+        <h4>Ingredients</h4>
+        <div id="container_{{container}}" class="container">
+            <ul>
+                <li>{{container.ingredients}}</li>
+            </ul>
+        {% endfor %}
+    </div>    
+    <div>
+        
+        {% for container in containers %}
+        <h2>Container:{{ container.id }}</h2>
+        <h4>Procedure</h4>
+        <div id="container_{{container}}" class="procedure"></div>
+        <ol>
+            <li>{{ container.procedure }}</li>  
         </ol>
-        <a href="{% url 'index' %}"> Menu</a>
+        {% endfor %}
+    </div>
+             
+    <a href="{% url 'index' %}"> Menu</a>
     </div>
 {% endblock %}

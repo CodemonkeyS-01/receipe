@@ -2,9 +2,9 @@
 {% block head %}
     <h1>Welcome to my Receipe!</h1>
 {% endblock %}
-{% block body%}        
+{% block body%}   
+    <h5>Please find the receipe below</h5>
     <ul>
-        <h5>Please find the receipe below</h5>
         {% for food in foods %}
         <li>
             <a href="{% url 'receipe' food.id %}">
