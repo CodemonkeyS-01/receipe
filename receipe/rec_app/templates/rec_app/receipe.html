@@ -10,22 +10,24 @@
         
         {% for container in containers %}
         <h2> Container:{{ container.id }}</h2> 
-        <div id="ingredient_{{container.id}}" class="ingredients" >
-            <h4 id="heading_{{container.id}}">Ingredients</h4>
-            <ul>
-                
-                <li>{{ container.ingredients }}</li>
-                
-            </ul>
+        <div>
+            <div id="ingredient_{{container.id}}" class="ingredients" >
+                <h4 id="heading_{{container.id}}">Ingredients</h4>
+                <ul>
+                    
+                    <li>{{ container.ingredients }}</li>
+                    
+                </ul>
+            </div>
+            
+            <div id="procedure_{{container.id}}" class="procedure">
+                <h4 id="heading_{{container.id}}">Procedure</h4>
+                <ol>
+                    <li>{{container.procedure}}</li>
+                </ol>
+            </div>
+            <button id="btn_{{container.id}}" type="button" data-id="{{container.id}}">To procedure</button>
         </div>
-        
-        <div id="procedure_{{container.id}}" class="procedure" >
-            <h4 id="heading_{{container.id}}">Procedure</h4>
-            <ol>
-                <li>{{container.procedure}}</li>
-            </ol>
-        </div>
-        <button id="btn_{{container.id}}" type="button" data-id="{{container.id}}">To procedure</button>
         {% endfor %}
         
     </div>    

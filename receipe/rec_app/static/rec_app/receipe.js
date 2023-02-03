@@ -22,6 +22,7 @@ function displayControl(close_id, on_id, btn_id){
         ingred.style.display ="none"
         proced.style.display = "block"
         btn.innerHTML = "To ingredients"
+        proced.style.animationPlayState = 'running';
     }
 }
     

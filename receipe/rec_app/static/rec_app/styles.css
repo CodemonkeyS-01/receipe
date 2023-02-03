@@ -1,7 +1,32 @@
+@keyframes right{
+    0%{
+        left:-50%;
+        color: blue
+    }
+    50%{left: 50%;
+
+    }
+    100%{left:0%;
+        color: black
+    }
+
+}
+
+@keyframes fadeout{
+    0%{background: visible;
+    color:red;}
+    80%{background: hidden;
+    color: white;}   
+}
+
 h1 {
+    animation: right;
+    animation-duration: 4s;
+    position: relative;
     font-family: sans-serif;
     font-size: 70px;
     text-align: center;
+    
 }
 
 h5 {
@@ -16,4 +41,8 @@ h4 {
 
 .procedure{
     display: none;
+    background-color: aquamarine;
+    animation: fadeout;
+    animation-duration:3s;
+    animation-play-state: paused;
 }
